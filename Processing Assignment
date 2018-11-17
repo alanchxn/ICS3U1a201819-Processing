@@ -1,0 +1,50 @@
+aryan_pos_x = 0
+aryan_pos_y = 0
+aryan_speed_y = 5
+aryan_speed_x = 7
+value = 0
+
+def setup():
+    global aryan
+    global back_img
+    x = 0
+
+    size(768, 1024)
+    aryan = loadImage("aryantalking.jpg")
+    back_img = loadImage("fabroa1.jpg")
+
+#aryanpicture
+def draw():
+    global aryan_pos_x, aryan_pos_y, aryan_speed_x, aryan_speed_y
+    background(back_img)
+    image(aryan, aryan_pos_x, aryan_pos_y, width/4, height/4)
+    
+    aryan_pos_x += aryan_speed_x
+    aryan_pos_y += aryan_speed_y
+    if aryan_pos_x < 0 or aryan_pos_x > width*3/4:
+        aryan_speed_x *= -1
+    elif aryan_pos_y < 0 or aryan_pos_y > height*3/4:
+        aryan_speed_y *= -1
+    
+    textSize(25)
+    fill(255, 255, 255)
+    text("When you hear Aryan talking for the tenth time in class", 45, 100)
+    
+    if mousePressed:
+        fill(0)
+    else:
+        fill(255)
+    rect(225, 225, 250, 250)
+    
+    ellipseMode(CENTER)
+    fill(252, 0, 0)
+    quad(38, 31, 86, 20, 69, 63, 30, 76)
+    
+  
+    ellipseMode(CENTER)
+    fill(201, 151, 151)
+    triangle(50, 75, 88, 20, 86, 75) 
+    
+    ellipseMode(CENTER)
+    fill(201, 151, 195)
+    rect(200, 200, 55, 55, 3, 6, 12, 18)
