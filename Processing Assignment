@@ -4,6 +4,7 @@ aryan_speed_y = 5
 aryan_speed_x = 7
 value = 0
 
+#aryan_and_fabroa_pictures
 def setup():
     global aryan
     global back_img
@@ -13,7 +14,7 @@ def setup():
     aryan = loadImage("aryantalking.jpg")
     back_img = loadImage("fabroa1.jpg")
 
-#aryanpicture
+#aryan_picture
 def draw():
     global aryan_pos_x, aryan_pos_y, aryan_speed_x, aryan_speed_y
     background(back_img)
@@ -30,12 +31,14 @@ def draw():
     fill(255, 255, 255)
     text("When you hear Aryan talking for the tenth time in class", 45, 100)
     
+    #mousepress_function
     if mousePressed:
         fill(0)
     else:
         fill(255)
     rect(225, 225, 250, 250)
     
+    #shapes
     ellipseMode(CENTER)
     fill(252, 0, 0)
     quad(38, 31, 86, 20, 69, 63, 30, 76)
